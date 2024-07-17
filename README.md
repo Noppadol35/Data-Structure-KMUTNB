@@ -1,5 +1,11 @@
 # Data-Structure-Kmutnb
-Stack 1
-Stack 2
-Queue 1
-Link list
+
+## Stacks
+- [Stack 1](https://github.com/Noppadol35/Data-Structure-Kmutnb/blob/main/Stack.cpp)
+- [Stack 2](https://github.com/Noppadol35/Data-Structure-Kmutnb/blob/main/Stack2.cpp)
+
+## Queue
+- [Queue 1](https://github.com/Noppadol35/Data-Structure-Kmutnb/blob/main/Queue.cpp)
+
+## Link list
+Link list 
