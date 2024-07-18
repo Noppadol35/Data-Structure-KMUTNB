@@ -18,21 +18,25 @@ class Queue {
 
         void enqueue(int data) { // stack same push 
             if (!full()) {
+                if (empty()){
+                    front = 0;
+                }
                 rear++;
                 Array[rear] = data;
-
-                if (!empty()){
-                    front++;
-                }
             } 
-                
+            else {
+                cout << "Queue is full" << endl;
+            }
         }
 
         int dequeue() { // stack same pop
             if (!empty()) {
                 int temp = Array[front];
-                front++;
-                return temp;
+                if (front == rear){
+                    front = rear = -1;
+                } else {
+                    front++;
+                }
             }
             return -1;
         }
@@ -51,6 +55,12 @@ class Queue {
 
 int main () {
     Queue q;
-    
+    q.enqueue(1);
+    q.enqueue(2);
+    q.enqueue(3);
+    q.enqueue(4);
+    q.enqueue(5);
+    q.enqueue(6);
+    q.print();
     return 0;
 }
