@@ -16,7 +16,7 @@ class Queue {
             return rear == size - 1;
         }
 
-        void enqueue(int data) {
+        void enqueue(int data) { // stack same push 
             if (!full()) {
                 rear++;
                 Array[rear] = data;
@@ -25,7 +25,7 @@ class Queue {
             }
         }
 
-        int dequeue() {
+        int dequeue() { // stack same pop
             if (!empty()) {
                 int temp = Array[front];
                 front++;
