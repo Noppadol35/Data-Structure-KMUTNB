@@ -3,46 +3,58 @@ using namespace std;
 
 class Queue {
     public:
-        int Array[6];
-        int size = 5;
-        int front = 0;
+        int size_arr;
+        int *Array = new int[size_arr];
+        int front = -1;
         int rear = -1;
 
+        Queue(){
+            size_arr = 6;
+        }
+
+        Queue(int s) {
+            size_arr = s;
+        }
+
         bool empty() {
-            return front > rear;
+            return front == -1 && rear == -1 ;
         }
 
         bool full() { 
-            return rear == size - 1;
+            return rear == size_arr - 1;
         }
 
         void enqueue(int data) { // stack same push 
             if (!full()) {
+                if (empty()) {
+                    front = 0;
+                }
                 rear++;
                 Array[rear] = data;
-            } else {
-                cout << "Queue overflow" << endl;
+            }
+            else {
+                cout << "Queue is full" << endl;
             }
         }
 
         int dequeue() { // stack same pop
             if (!empty()) {
                 int temp = Array[front];
-                front++;
+                if (front == rear){
+                    front = rear = -1;
+                }  else {
+                    front++;
+                }
                 return temp;
             }
             return -1;
         }
 
         void print() {
-            if (empty()) {
-                cout << "Queue is empty" << endl;
-            } else {
-                for (int i = front; i <= rear; i++) {
-                    cout << Array[i] << " ";
-                }
-                cout << endl;
+            for (int i = front; i <= rear; i++){
+                cout << Array[i]<< " ";
             }
+            cout << endl;
         }
 
         int currentSize() {
@@ -81,9 +93,9 @@ void CmdChar() {
             cin >> data;
             q.enqueue(data);
         } else if (cmd == 'd') { // Dequeue data from the queue and show that data
-            int dequeued = q.dequeue();
-            if (dequeued != -1) {
-                cout << dequeued << endl;
+            int temp = q.dequeue();
+            if (temp != -1) {
+                cout << temp << endl;
             }
         } else if (cmd == 'p') { // Show all data in the queue from the first until last data in the queue
             q.print();
