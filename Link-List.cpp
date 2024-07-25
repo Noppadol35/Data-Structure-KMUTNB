@@ -76,4 +76,6 @@ int main(){
     list.print();
     list.del(0);
     list.print();
+
+    reutrn 0;
 }
