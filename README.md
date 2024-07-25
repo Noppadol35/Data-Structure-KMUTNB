@@ -8,4 +8,4 @@
 - [Queue 1](https://github.com/Noppadol35/Data-Structure-Kmutnb/blob/main/Queue.cpp)
 
 ## Link list
-Link list 
+- [Link list 1](https://github.com/Noppadol35/Data-Structure-Kmutnb/blob/main/Link-List.cpp)
