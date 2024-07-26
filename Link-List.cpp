@@ -77,5 +77,5 @@ int main(){
     list.del(0);
     list.print();
 
-    reutrn 0;
+    return 0;
 }
