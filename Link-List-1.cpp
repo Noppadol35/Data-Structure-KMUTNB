@@ -111,7 +111,6 @@ public:
 
         if (current != NULL) {
             previous->next = current->next;
-            delete current;
         }
         print();
     }
