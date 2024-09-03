@@ -17,10 +17,10 @@ Develop Hash table using Separate Chaining which has following functions
 ***Input***
 - each line consists of `command` `key` `value`
 	1.1 Command:  
-    a: add a pair of `key,value` into Hash Table  
-    p: show a pair of `key,value`
-    s: find a value from a given key 
-    e: exit
+    a : add a pair of `key,value` into Hash Table  
+    p : show a pair of `key,value`
+    s : find a value from a given key 
+    e : exit
 
 ***Example***
  - a 13 cat : add key = 13 and value = cat  
