@@ -11,3 +11,6 @@
 
 ## Link list
 - [Link list 1](https://github.com/Noppadol35/Data-Structure-Kmutnb/blob/main/Link-List-1.cpp)
+
+## Hash
+- [Hash 1](https://github.com/Noppadol35/Data-Structure-Kmutnb/blob/main/HashTable.cpp)
