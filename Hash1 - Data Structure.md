@@ -19,7 +19,9 @@ Develop Hash table using Separate Chaining which has following functions
 - Command:  
     a : add a pair of `key,value` into Hash Table  
     p : show a pair of `key,value`
+
     s : find a value from a given key 
+    
     e : exit
 
 ***Example***
