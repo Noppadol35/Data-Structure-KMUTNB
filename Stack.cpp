@@ -4,7 +4,7 @@ using namespace std;
 class Stack {
 public:
     char array[10000];
-    int top = -1; // Initialize top to -1 for an empty stack
+    int top = -1; 
     
     // CHECK EMPTY
     bool empty() {
@@ -13,7 +13,7 @@ public:
     
     // CHECK FULL
     bool full() {
-        return (top == 9999); // array index is 0 to 9999
+        return (top == 9999);
     }
     
     // PUSH DATA TO STACK
@@ -31,7 +31,7 @@ public:
             top--;
             return temp;
         }
-        return -1; // Consider returning a meaningful value for an empty stack
+        return -1;
     }
 };
 
