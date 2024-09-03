@@ -85,7 +85,7 @@ void CmdChar() {
         } else if (cmd == 'X') { // exit the loop
             break;
         } else {
-            cout << "Invalid command" << endl;
+            cout << "Invalid command" << endl; //  if the command is not valid
         }
     }
 }
