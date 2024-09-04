@@ -1,7 +1,7 @@
 # **📚 Data Structure KMUTNB**
 Hello #include <iostream> !  to the **Data Structure KMUTNB** repository! This repository contains various data structure implementations used in our lab sessions at **KMUTNB**. Each section includes sample codes with links to the respective implementations.
 [**Link grader**](http://202.44.40.147/)
-|Mid| Final |
+|[Mid](https://github.com/Noppadol35/Data-Structure-Kmutnb/tree/main/Lab-Midterm)| Final |
 |--|--|
 | Stack | Heap |
 | Queue |  |
@@ -37,3 +37,8 @@ Linked lists are dynamic data structures consisting of nodes connected via point
 Hash tables are data structures that map keys to values using a hash function. Here’s a basic implementation
 
 - [Hash 1](https://github.com/Noppadol35/Data-Structure-Kmutnb/blob/main/hashTable/HashTable.cpp) : Develop Hash table using Separate Chaining which has following functions
+
+## 🔺 Heap
+A heap is a binary tree-based data structure that satisfies the heap property. Here’s a basic implementation
+
+- [Heap 1]()
