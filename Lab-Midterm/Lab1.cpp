@@ -17,7 +17,6 @@ public:
         this->status = status;
     }
 };
-
 int main()
 {
     int n = 0;
