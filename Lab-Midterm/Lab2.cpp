@@ -1,92 +1,71 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
-class Stack {
-    public:
-        int size_arr;
-        char* Array;
-        int top;
-
-        Stack(int s = 100) {
-            size_arr = s;
-            Array = new char[size_arr];
-            top = -1;
-        }
-
-        bool empty() {
-            return top == -1;
-        }
-
-        bool full() {
-            return top == size_arr - 1;
-        }
-
-        void push(char data) {
-            if (!full()) {
-                top++;
-                Array[top] = data;
-            } else {
-                cout << "Overflow" << endl;
-            }
-        }
-
-        char pop() {
-            if (!empty()) {
-                char temp = Array[top];
-                top--;
-                return temp;
-            } else {
-                cout << "Underflow" << endl;
-                return '\0';
-            }
-        }
-};
-
-bool programMatch() {
-    string input;
-    getline(cin, input);
-    Stack s;
+int main()
+{
+    stack<string> stack;
+    string s;
+    getline(cin, s);
     int match = 0;
 
-    for (int i = 0; i < input.length(); i++) {
-        char current = input[i];
-
-        // Push opening brackets
-        if (current == '(' || current == '[' || current == '{' || current == '<') {
-            s.push(current);
-        } else if (current == ')' || current == ']' || current == '}' || current == '>') {
-            // Check for corresponding closing brackets
-            if (s.empty()) {
-                cout << "Not matched" << endl;
-                cout << match << " matched" << endl;
-                return false;
+    for (int i = 0; i < s.length(); i++)
+    {
+        char c = s[i];
+        if (c == '(' || c == '[' || c == '{' || c == '<')
+        {
+            if (c == '<' && i + 1 < s.length() && s[i + 1] == '<')
+            {
+                stack.push("<<");
+                i++;
             }
-
-            char last = s.pop();
-            if ((current == ')' && last != '(') ||
-                (current == ']' && last != '[') ||
-                (current == '}' && last != '{') ||
-                (current == '>' && last != '<')) {
-                cout << "Not matched" << endl;
-                cout << match << " matched" << endl;
-                return false;
+            else
+            {
+                stack.push(string(1, c));
             }
-            match++;
         }
-        // i need to check special case << >>
+        else if (c == ')' || c == ']' || c == '}' || c == '>')
+        {
+            if (c == '>' && i + 1 < s.length() && s[i + 1] == '>')
+            {
+                if (stack.empty() || stack.top() != "<<")
+                {
+                    cout << "Not match" << endl;
+                    cout << match << " match" << endl;
+                    return 0;
+                }
+                stack.pop();
+                i++;
+                match++;
+            }
+            else
+            {
+                if (stack.empty())
+                {
+                    cout << "Not match" << endl;
+                    cout << match << " match" << endl;
+                    return 0;
+                }
+                string v = stack.top();
+                stack.pop();
+                if ((c == ')' && v != "(") || (c == ']' && v != "[") || (c == '}' && v != "{") || (c == '>' && v != "<"))
+                {
+                    cout << "Not match" << endl;
+                    cout << match << " match" << endl;
+                    return 0;
+                }
+                match++;
+            }
+        }
+    }
+    if (stack.empty() && match > 0)
+    {
+        cout << match << " match" << endl;
+    }
+    else
+    {
+        cout << "Not match" << endl;
+        cout << match << " match" << endl;
     }
 
-    if (s.empty() && match > 0) {
-        cout << match << " matched" << endl;
-        return true;
-    } else {
-        cout << "Not matched" << endl;
-        cout << match << " matched" << endl;
-        return false;
-    }
-}
-
-int main() {
-    programMatch();
     return 0;
 }
