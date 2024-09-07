@@ -13,7 +13,10 @@ int main()
     for (int i = 0; i < input.length(); i++)
     {
         char open = input[i];
-        if (open == '(' || open == '[' || open == '{' || open == '<')
+        if (open == '(' || 
+            open == '[' || 
+            open == '{' || 
+            open == '<')
         {
             // <<
             if (open == '<' && input[i + 1] == '<')
@@ -26,7 +29,10 @@ int main()
                 stack.push(string(1, open));
             }
         }
-        else if (open == ')' || open == ']' || open == '}' || open == '>')
+        else if (open == ')' || 
+                open == ']' || 
+                open == '}' || 
+                open == '>')
         {
             if (open == '>' && input[i + 1] == '>')
             {
@@ -48,7 +54,10 @@ int main()
                 }
                 string close = stack.top();
                 stack.pop();
-                if (open == '(' && close == ")" || open == '[' && close == "]" || open == '{' && close == "}" || open == '<' && close == ">")
+                if (open == '(' && close == ")" || 
+                    open == '[' && close == "]" || 
+                    open == '{' && close == "}" || 
+                    open == '<' && close == ">")
                 {
                     cout << "Not matched" << endl;
                     cout << match << " match" << endl;
