@@ -6,34 +6,34 @@ using namespace std;
 int main()
 {
     stack<string> stack;
-    string s;
-    getline(cin, s);
+    string input;
+    getline(cin, input);
     int match = 0;
 
-    for (int i = 0; i < s.length(); i++)
+    for (int i = 0; i < input.length(); i++)
     {
-        char c = s[i];
-        if (c == '(' || c == '[' || c == '{' || c == '<')
+        char open = input[i];
+        if (open == '(' || open == '[' || open == '{' || open == '<')
         {
-            if (c == '<' && i + 1 < s.length() && s[i + 1] == '<')
+            // <<
+            if (open == '<' && input[i + 1] == '<')
             {
                 stack.push("<<");
                 i++;
             }
             else
             {
-                stack.push(string(1, c));
+                stack.push(string(1, open));
             }
         }
-        else if (c == ')' || c == ']' || c == '}' || c == '>')
+        else if (open == ')' || open == ']' || open == '}' || open == '>')
         {
-            if (c == '>' && i + 1 < s.length() && s[i + 1] == '>')
+            if (open == '>' && input[i + 1] == '>')
             {
                 if (stack.empty() || stack.top() != "<<")
                 {
-                    cout << "Not match" << endl;
+                    cout << "Not matched" << endl;
                     cout << match << " match" << endl;
-                    return 0;
                 }
                 stack.pop();
                 i++;
@@ -43,17 +43,15 @@ int main()
             {
                 if (stack.empty())
                 {
-                    cout << "Not match" << endl;
+                    cout << "Not matched" << endl;
                     cout << match << " match" << endl;
-                    return 0;
                 }
-                string v = stack.top();
+                string close = stack.top();
                 stack.pop();
-                if ((c == ')' && v != "(") || (c == ']' && v != "[") || (c == '}' && v != "{") || (c == '>' && v != "<"))
+                if (open == '(' && close == ")" || open == '[' && close == "]" || open == '{' && close == "}" || open == '<' && close == ">")
                 {
-                    cout << "Not match" << endl;
+                    cout << "Not matched" << endl;
                     cout << match << " match" << endl;
-                    return 0;
                 }
                 match++;
             }
@@ -61,11 +59,11 @@ int main()
     }
     if (stack.empty() && match > 0)
     {
-        cout << match << " match" << endl;
+        cout << match << " matched" << endl;
     }
     else
     {
-        cout << "Not match" << endl;
+        cout << "Not matched" << endl;
         cout << match << " match" << endl;
     }
 
