@@ -11,7 +11,10 @@ public:
     int Tservice;
     string status;
 
-    process(string pid, int arrival, int Tservice, string status)
+    process(string pid, 
+    int arrival, 
+    int Tservice, 
+    string status)
     {
         this->pid = pid;
         this->arrival = arrival;
