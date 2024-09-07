@@ -1,62 +1,64 @@
 #include <bits/stdc++.h>
 #include <iostream>
+#include <string>
 using namespace std;
+
 class process
 {
 public:
-    string id;
-    int arrive;
-    int service;
-    int index;
+    string pid;
+    int arrival;
+    int Tservice;
     string status;
 
-    process(string id, int arrive, int service, string status)
+    process(string pid, int arrival, int Tservice, string status)
     {
-        this->id = id;
-        this->arrive = arrive;
-        this->service = service;
+        this->pid = pid;
+        this->arrival = arrival;
+        this->Tservice = Tservice;
         this->status = status;
     }
 };
+
 int main()
 {
     int n = 0;
     cin >> n;
-    vector<process> arr;
+    vector<process> array;
     for (int i = 0; i < n; i++)
     {
-        string id = "";
-        int arrive = 0;
-        int service = 0;
-        cin >> id >> arrive >> service;
-        arr.push_back(process(id, arrive, service, "not"));
+        string pid = "";
+        int arrival = 0;
+        int Tservice = 0;
+        cin >> pid >> arrival >> Tservice;
+        array.push_back(process(pid, arrival, Tservice, "not"));
     }
 
     for (int i = 0; i < n; i++)
     {
         for (int j = i + 1; j < n; j++)
         {
-            if (arr[i].arrive > arr[j].arrive)
+            if (array[i].arrival > array[j].arrival)
             {
-                swap(arr[i], arr[j]);
+                swap(array[i], array[j]);
             }
         }
     }
-
     int start = 0;
+    int Etime = 0;
     int new_start = 0;
-    int Time = 0;
-    for (int j = 0; j < n; j++)
+    for (int i = 0; i < n; i++)
     {
-        for (int i = arr[start].service; i > 0; i--)
+        for (int i = array[start].Tservice; i > 0; i--)
         {
-            cout << arr[start].id << " : " << i << endl;
+            cout << array[start].pid << " : " << i << endl;
         }
-        arr[start].status = "done";
-        Time = Time + arr[start].service;
+        array[start].status = "done";
+        Etime = Etime + array[start].Tservice;
+
         for (int k = 0; k < n; k++)
         {
-            if (arr[k].status == "not" && arr[k].arrive == Time)
+            if (array[k].status == "not" && array[k].arrival == Etime)
             {
                 new_start = k;
             }
@@ -67,15 +69,15 @@ int main()
         }
         start = new_start;
     }
-
     for (int i = n - 1; i >= 0; i--)
     {
-        if (arr[i].status == "not")
+        if (array[i].status == "not")
         {
-            for (int j = arr[i].service; j > 0; j--)
+            for (int j = array[i].Tservice; j > 0; j--)
             {
-                cout << arr[i].id << " : " << j << endl;
+                cout << array[i].pid << " : " << j << endl;
             }
         }
     }
+    return 0;
 }
