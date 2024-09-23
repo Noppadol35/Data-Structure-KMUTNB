@@ -6,9 +6,9 @@ Hello #include <iostream> !  to the **Data Structure KMUTNB** repository! This r
 |[Midterm](https://github.com/Noppadol35/Data-Structure-Kmutnb/tree/main/Lab-Midterm)| Finalterm |
 |--|--|
 | Stack | Heap |
-| Queue |  |
-| Linklist | |
-| Hash | |
+| Queue | BTS |
+| Linklist | AVL |
+| Hash | Graph |
 
 
 ## 📊 Stacks
@@ -39,9 +39,24 @@ Linked lists are dynamic data structures consisting of nodes connected via point
 ## 🔑 Hash
 Hash tables are data structures that map keys to values using a hash function. Here’s a basic implementation
 
-- [Hash 1](https://github.com/Noppadol35/Data-Structure-Kmutnb/blob/main/hashTable/HashTable.cpp) : Develop Hash table using Separate Chaining which has following functions
+- [Hash 1](https://github.com/Noppadol35/Data-Structure-Kmutnb/blob/main/hashTable) : Develop Hash table using Separate Chaining which has following functions
 
 ## 🔺 Heap
 A heap is a binary tree-based data structure that satisfies the heap property. Here’s a basic implementation
 
-- [Heap 1]()
+- [Heap 1](https://github.com/Noppadol35/Data-Structure-Kmutnb/tree/main/heap) : Develop Heap using link which has following functions
+
+## 🌲 Binary Search Tree
+A binary search tree is a binary tree data structure that satisfies the binary search property. Here’s a basic implementation
+
+- [BTS 1](https://github.com/Noppadol35/Data-Structure-Kmutnb/tree/main/BST) : Develop Binary Search Tree which has following functions
+
+## 🌲 AVL Tree
+An AVL tree is a self-balancing binary search tree. Here’s a basic implementation
+
+- [AVL 1]()
+
+## 📊 Graph
+A graph is a non-linear data structure consisting of nodes connected via edges. Here’s a basic implementation
+
+- [Graph 1]()
