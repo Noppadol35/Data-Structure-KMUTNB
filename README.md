@@ -1,7 +1,8 @@
 <h1 align = center>📚 Data Structure KMUTNB </h1>
 
-Hello #include <iostream> !  to the **Data Structure KMUTNB** repository! This repository contains various data structure implementations used in our lab sessions at **KMUTNB**. Each section includes sample codes with links to the respective implementations.
+Hello #include|bits/stdc++.h|!  to the **Data Structure KMUTNB** repository! This repository contains various data structure implementations used in our lab sessions at **KMUTNB**. Each section includes sample codes with links to the respective implementations.
 [**Link grader**](http://202.44.40.147/)
+
 
 |[Midterm](https://github.com/Noppadol35/Data-Structure-Kmutnb/tree/main/Lab-Midterm)| Finalterm |
 |--|--|
@@ -54,9 +55,9 @@ A binary search tree is a binary tree data structure that satisfies the binary s
 ## 🌲 AVL Tree
 An AVL tree is a self-balancing binary search tree. Here’s a basic implementation
 
-- [AVL 1]()
+- [AVL 1](https://github.com/Noppadol35/Data-Structure-Kmutnb/blob/main/AVL) : Develop AVL Tree which has following functions
 
 ## 📊 Graph
 A graph is a non-linear data structure consisting of nodes connected via edges. Here’s a basic implementation
 
-- [Graph 1]()
+- [Graph 1](https://github.com/Noppadol35/Data-Structure-Kmutnb/tree/main/graph) : Develop Graph which has following functions
