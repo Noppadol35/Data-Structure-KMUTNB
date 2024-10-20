@@ -54,9 +54,9 @@ A binary search tree is a binary tree data structure that satisfies the binary s
 ## 🌲 AVL Tree
 An AVL tree is a self-balancing binary search tree. Here’s a basic implementation
 
-- [AVL 1]()
+- [AVL 1](https://github.com/Noppadol35/Data-Structure-Kmutnb/blob/main/AVL) : Develop AVL Tree which has following functions
 
 ## 📊 Graph
 A graph is a non-linear data structure consisting of nodes connected via edges. Here’s a basic implementation
 
-- [Graph 1]()
+- [Graph 1](https://github.com/Noppadol35/Data-Structure-Kmutnb/tree/main/graph) : Develop Graph which has following functions
