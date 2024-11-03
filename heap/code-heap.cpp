@@ -1,112 +1,100 @@
-#include <bits/stdc++.h>
 #include <iostream>
 using namespace std;
 
 class heap
 {
 public:
-    int q[1000];
+    int q[1000]; // Heap array, q[0] will store the number of elements in the heap
+
+    heap()
+    {
+        q[0] = 0; // Initialize heap size to 0
+    }
     void add(int n)
     {
-        q[0] = q[0] + 1;
-        q[q[0]] = n;
-        int i = q[0];
-    }
-    void heapify()
-    {
-        int j = q[0];
-        if (j % 2 == 0)
-        {
-            q[j + 1] = INT_MAX;
-        }
-        else
-        {
-            j = j - 1;
-        }
-        while (j >= 1)
-        {
-            int i = j;
-            while (i <= q[0])
-            {
-                int p = i / 2;
-                int r = i + 1;
-                int l = i;
-                if (q[l] >= q[r] && q[l] > q[p])
-                {
-                    int t = q[l];
-                    q[l] = q[p];
-                    q[p] = t;
-                    i = 2 * l;
-                }
-                else if (q[r] > q[l] && q[r] > q[p])
-                {
-                    int t = q[r];
-                    q[r] = q[p];
-                    q[p] = t;
-                    i = 2 * r;
-                }
-                else
-                {
-                    break;
-                }
-            }
-            j = j - 2;
-        }
+        q[0] = q[0] + 1; // Increase heap size
+        int size = q[0];
+        q[size] = n; // Add element at the end of the heap
     }
     void insert(int n)
     {
-        if (q[0] < 999)
-        {
-            q[0] = q[0] + 1;
-            q[q[0]] = n;
-            int i = q[0];
-            while (i > 1 && q[i / 2])
-            {
-                int t = q[i / 2];
-                q[i / 2] = q[i];
-                q[i] = t;
-                i = i / 2;
-            }
-        }
+        add(n);
+        heapify();
     }
-    int delete()
+    void heapify()
     {
-        if (q[0] > 0)
-        {
-            int s = q[1];
-            q[1] = q[q[0]];
-            q[0] = q[0] - 1;
-            int p = 1;
-            while (p <= q[0])
+        int size = q[0];
+        for (int i = (size / 2); i >= 1; i--)
+        { // process from the Last Non-Leaf Up to the Root
+            int parent = i;
+            while (parent <= (size / 2))
             {
-                int l = p * 2;
-                int r = (p * 2) + 1;
-                if (l <= q[0] && q[l] > q[p] && q[l] >= q[r])
+                int leftChild = 2 * parent;
+                int rightChild = leftChild + 1;
+                int pointer = parent;
+
+                if (leftChild <= size && q[leftChild] > q[largest])
                 {
-                    int t = q[l];
-                    q[l] = q[p];
-                    q[p] = t;
-                    p = l;
+                    pointer = leftChild;
                 }
-                else if (r <= q[0] && q[r] > q[p] && q[r] > q[l])
+                if (rightChild <= size && q[rightChild] > q[largest])
                 {
-                    int t = q[r];
-                    q[r] = q[p];
-                    q[p] = t;
-                    p = r;
+                    pointer = rightChild;
+                }
+                if (largest != parent)
+                {
+                    swap(q[parent], q[largest]);
+                    parent = pointer;
                 }
                 else
                 {
                     break;
                 }
             }
-            return s;
-        }
-        else
-        {
-            return NULL;
         }
     }
+    int deleteMax()
+    {
+        if (q[0] == 0)
+        {
+            return 0; // Heap is empty
+        }
+
+        int DeletedElement = q[1];
+        q[1] = q[q[0]]; // Move the last element to the root
+        q[0]--;         // Reduce the heap size
+        int size = q[0];
+
+        // Fix the heap if the root element is smaller than its children
+        int parent = 1;
+        while (parent <= size)
+        {
+            int leftChild = 2 * parent;
+            int rightChild = leftChild + 1;
+            int pointer = parent;
+
+            if (leftChild <= size && q[leftChild] > q[largest])
+            {
+                pointer = leftChild;
+            }
+            if (rightChild <= size && q[rightChild] > q[largest])
+            {
+                pointer = rightChild;
+            }
+            if (largest != parent)
+            {
+                swap(q[parent], q[largest]);
+                parent = pointer;
+            }
+            else
+            {
+                break;
+            }
+        }
+
+        return DeletedElement;
+    }
+
     void print()
     {
         for (int i = 1; i <= q[0]; i++)
@@ -120,6 +108,51 @@ public:
 int main()
 {
     heap h;
+    h.add(55);
+    h.add(14);
+    h.add(50);
+    h.add(20);
+    h.add(5);
+    h.add(15);
+    h.add(30);
+    h.add(31);
+    h.add(60);
+    h.add(28);
+    h.print();
+    h.heapify();
+    h.print();
 
+    cout << "del " << h.deleteMax() << ": ";
+    h.print();
+    cout << "del " << h.deleteMax() << ": ";
+    h.print();
+    cout << "del " << h.deleteMax() << ": ";
+    h.print();
+    cout << "del " << h.deleteMax() << ": ";
+    h.print();
+
+    h.insert(15);
+    h.print();
+
+    h.insert(13);
+    h.print();
+
+    h.insert(9);
+    h.print();
+
+    h.insert(20);
+    h.print();
+
+    h.insert(8);
+    h.print();
+
+    h.insert(11);
+    h.print();
+
+    h.insert(30);
+    h.print();
+
+    h.insert(2);
+    h.print();
     return 0;
 }
