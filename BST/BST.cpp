@@ -7,8 +7,8 @@ class NODE
 public:
     NODE(int new_data)
     {
-        left = nullptr;  // Use nullptr instead of NULL
-        right = nullptr; // Use nullptr instead of NULL
+        left = nullptr;
+        right = nullptr;
         data = new_data;
     }
     int data;
@@ -51,9 +51,9 @@ void inorder(NODE *node)
 {
     if (node != nullptr)
     {
-        inorder(node->left);
-        cout << node->data << ",";
-        inorder(node->right);
+        inorder(node->left);       // left
+        cout << node->data << ","; // center
+        inorder(node->right);      // right
     }
 }
 
@@ -61,24 +61,11 @@ void postorder(NODE *node)
 {
     if (node != nullptr)
     {
-        postorder(node->left);
-        postorder(node->right);
-        cout << node->data << ",";
+        postorder(node->left);     // left
+        postorder(node->right);    // right
+        cout << node->data << ","; // center
     }
 }
-
-// bool search(NODE *node, int new_data) {
-//     if (node != nullptr) {
-//         cout << "# ";
-//         if (new_data > node->data)
-//             return search(node->right, new_data);
-//         else if (new_data < node->data)
-//             return search(node->left, new_data);
-//         else
-//             return true; // Found
-//     }
-//     return false; // Not found
-// }
 
 void BreadthFirst(NODE *root)
 {
@@ -98,9 +85,6 @@ void BreadthFirst(NODE *root)
             NODE *node = q.front();
             q.pop();
             cout << node->data << ",";
-            // if (i < level_size - 1) {
-            //     cout << ",";
-            // }
             if (node->left != nullptr)
             {
                 q.push(node->left);
@@ -205,7 +189,6 @@ void command()
         {
             BreadthFirst(root);
         }
-
         else if (cmd == 'x')
         {
             break;
