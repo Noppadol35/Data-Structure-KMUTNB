@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 class NODE
@@ -187,10 +188,6 @@ void command()
         else if (cmd == 'b')
         {
             BreadthFirst(root);
-        }
-        else if (cmd == 'D')
-        {
-            DepthFirst(root);
         }
         else if (cmd == 'x')
         {
