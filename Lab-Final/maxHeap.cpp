@@ -59,6 +59,19 @@ public:
         }
     }
 
+    // ฟังก์ชันค้นหาค่าที่ตำแหน่ง k ใน heap
+    void findAtPosition(int k)
+    {
+        if (k > 0 && k <= q[0])
+        {
+            cout << "Value at position " << k << " is: " << q[k] << endl;
+        }
+        else
+        {
+            cout << "Invalid position!" << endl;
+        }
+    }
+
     // ฟังก์ชันลบค่า root ออกจาก heap
     int remove()
     {
@@ -114,6 +127,12 @@ int main()
         else if (choice == 'd')
         { // ลบค่า root
             cout << h.remove() << endl;
+        }
+        else if (choice == 'k')
+        { // ค้นหาค่าที่ตำแหน่ง k
+            int k;
+            cin >> k;
+            h.findAtPosition(k);
         }
         else if (choice == 'e')
         { // ออกจากโปรแกรม
