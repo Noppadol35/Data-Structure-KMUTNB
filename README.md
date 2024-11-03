@@ -4,7 +4,7 @@ Hello #include|bits/stdc++.h|!  to the **Data Structure KMUTNB** repository! Thi
 [**Link grader**](http://202.44.40.147/)
 
 
-|[Midterm](https://github.com/Noppadol35/Data-Structure-Kmutnb/tree/main/Lab-Midterm)| Finalterm |
+|[Midterm](https://github.com/Noppadol35/Data-Structure-Kmutnb/tree/main/Lab-Midterm)| [Finalterm](https://github.com/Noppadol35/Data-Structure-Kmutnb/tree/main/Lab-Final)|
 |--|--|
 | Stack | Heap |
 | Queue | BTS |
