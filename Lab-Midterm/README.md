@@ -8,7 +8,7 @@ This project consists of two key programming tasks focused on fundamental data s
 - **LAB1**: Process Scheduling Algorithm using LIFO
 - **LAB2**: Parenthesis Matching using Stack
 
-## LAB1: **Process Scheduling Algorithm using LIFO**
+## [LAB1](https://github.com/Noppadol35/Data-Structure-KMUTNB/blob/main/Lab-Midterm/LAB1.md): **Process Scheduling Algorithm using LIFO**
 
 ### **Description**
 In this lab, we developed a process scheduling algorithm using the **Last-In-First-Out (LIFO)** concept. The program simulates how an operating system selects processes to execute based on the following attributes
@@ -17,7 +17,7 @@ In this lab, we developed a process scheduling algorithm using the **Last-In-Fir
 - **Arrival Time (A)**: The time at which a process arrives in the queue.
 - **Service Time (T)**: The time required to complete the process.
 
-## **LAB2: Parenthesis Matching using Stack**
+## [**LAB2](https://github.com/Noppadol35/Data-Structure-KMUTNB/blob/main/Lab-Midterm/LAB2.md): Parenthesis Matching using Stack**
 
 ### **Description**
 This lab involves developing a parenthesis matching program using a **Stack** data structure. The program validates strings containing different types of brackets, including
