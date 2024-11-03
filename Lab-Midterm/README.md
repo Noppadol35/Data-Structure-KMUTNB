@@ -17,7 +17,7 @@ In this lab, we developed a process scheduling algorithm using the **Last-In-Fir
 - **Arrival Time (A)**: The time at which a process arrives in the queue.
 - **Service Time (T)**: The time required to complete the process.
 
-## [**LAB2](https://github.com/Noppadol35/Data-Structure-KMUTNB/blob/main/Lab-Midterm/LAB2.md): Parenthesis Matching using Stack**
+## [LAB2](https://github.com/Noppadol35/Data-Structure-KMUTNB/blob/main/Lab-Midterm/LAB2.md): Parenthesis Matching using Stack**
 
 ### **Description**
 This lab involves developing a parenthesis matching program using a **Stack** data structure. The program validates strings containing different types of brackets, including
